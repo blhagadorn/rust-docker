@@ -12,15 +12,16 @@ Before we build a microservice, we must first containerize!
 ### Simple Hello World (non-Docker)
 In this directory you'll find a file in `src/` called `main.rs` 
 
-To run without docker, run `cargo build --release` and then `./target/release/hello-world`  
-Now we will containerize and run the exact same sets of commands inside of a container 
+To run without docker, run `cargo build --release` and then  
+`./target/release/hello-world`   
+Now we will containerize and run the exact same sets of commands inside of a container  
 
 ### Simple Hello World (with Docker)
 
-In the `01-hello-world` directory to build:
-`docker build -t hello-world-rust .` 
-and then to run: 
-`docker run -it hello-world-rust`
+In the `01-hello-world` directory to build:  
+`docker build -t hello-world-rust .`  
+and then to run:  
+`docker run -it hello-world-rust`  
 
 ## 02-hello-web-server
 //TODO
