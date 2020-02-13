@@ -25,5 +25,23 @@ In the `01-hello-world` directory to build:
 and then to run:  
 `docker run -it hello-world-rust`  
 
-## 02-hello-web-server
-//TODO
+## 02-hello-world-distroless
+
+Distroless is a safe and lightweight way to run your container images, to do this we will use the following Dockerfile (also in `02-hello-world-distroless`: 
+```
+FROM rust:1.41.0 as build-env
+WORKDIR /app
+ADD . /app
+RUN cargo build --release
+
+FROM gcr.io/distroless/cc
+COPY --from=build-env /app/target/release/hello-world-distroless /
+CMD ["./hello-world-distroless"]
+```
+
+Here we can see the first stage runs up until `cargo build --release`, after that we grab the `distroless/cc` image which is the base image of distroless plus libgcc1 and its dependencies and add the `/target/release` directory.  From there we run the new binary.  
+The same commands above will help us build and run this image: 
+Build: 
+`docker build -t hello-world-rust-distroless .` 
+Run: 
+`docker run -it hello-world-rust` 
