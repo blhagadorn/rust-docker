@@ -22,5 +22,5 @@ In the `01-hello-world` directory to build:
 and then to run: 
 `docker run -it hello-world-rust`
 
-## 01-hello-web-server
+## 02-hello-web-server
 //TODO
