@@ -39,9 +39,9 @@ COPY --from=build-env /app/target/release/hello-world-distroless /
 CMD ["./hello-world-distroless"]
 ```
 
-Here we can see the first stage runs up until `cargo build --release`, after that we grab the `distroless/cc` image which is the base image of distroless plus libgcc1 and its dependencies and add the `/target/release` directory.  From there we run the new binary.  
-The same commands above will help us build and run this image: 
-Build: 
-`docker build -t hello-world-rust-distroless .` 
-Run: 
+Here we can see the first stage runs up until `cargo build --release`, after that we grab the `distroless/cc` image which is the base image of distroless plus libgcc1 and its dependencies and add the `/target/release` directory.  From there we run the new binary.   
+The same commands above will help us build and run this image:  
+Build:  
+`docker build -t hello-world-rust-distroless .`  
+Run:  
 `docker run -it hello-world-rust` 
