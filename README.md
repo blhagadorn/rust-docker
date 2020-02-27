@@ -1,4 +1,4 @@
-# Rust Microservice Reference Document
+# Rust Docker Reference Document
 
 ## Pre-requisites
 
