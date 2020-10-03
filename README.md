@@ -1,4 +1,5 @@
-# Rust Docker Reference Document
+# Rust Docker Examples
+This code is a series of examples of Rust being used inside of Docker containers.
 
 ## Pre-requisites
 
